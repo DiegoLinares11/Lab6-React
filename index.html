@@ -155,8 +155,16 @@
       }, [matched]);
 
       const flipCard = (index) => {
-        if (flippedIndices.length === 2 || flippedIndices.includes(index)) return;
+        if (completed || flippedIndices.length === 2 || flippedIndices.includes(index)) return;
         setFlippedIndices([...flippedIndices, index]);
+      };
+      const resetGame = () => {
+        const duplicated = [...CARD_VALUES, ...CARD_VALUES];
+        setCards(shuffle(duplicated.map((value, index) => ({ id: index, value }))));
+        setFlippedIndices([]);
+        setMatched([]);
+        setMoves(0);
+        setCompleted(false);
       };
 
       return (
@@ -164,6 +172,11 @@
           <div id="status" className={completed ? "completed" : ""}>
             {completed ? `🎉 Juego completado en ${moves} movimientos 🎉` : `Movimientos: ${moves}`}
           </div>
+          {completed && (
+            <button onClick={resetGame} style={{ marginTop: '1rem', padding: '0.5rem 1rem', fontSize: '1rem', cursor: 'pointer', borderRadius: '8px', backgroundColor: '#4CAF50', color: 'white', border: 'none' }}>
+              Reiniciar Juego
+            </button>
+          )}
           <div className="grid">
             {cards.map((card, index) => {
               const flipped = flippedIndices.includes(index) || matched.includes(card.value);
