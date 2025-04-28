@@ -1,5 +1,5 @@
-Juego de Memoria en React
-Descripción
+# Juego de Memoria en React
+## Descripción
 
 Este proyecto es un juego de memoria desarrollado en React usando un solo archivo HTML, sin utilizar herramientas como create-react-app o vite. El objetivo es encontrar todas las parejas de cartas volteándolas de dos en dos. El juego incluye animaciones, contador de movimientos y un mensaje de felicitación al completar el juego.
 Tecnologías Utilizadas
@@ -12,7 +12,7 @@ Tecnologías Utilizadas
 
     CSS Transitions (para animar el flip de las tarjetas)
 
-¿Cómo funciona React en este proyecto?
+### ¿Cómo funciona React en este proyecto?
 
     El juego está encapsulado en un componente funcional llamado MemoryGame.
 
@@ -36,7 +36,7 @@ Tecnologías Utilizadas
 
     ReactDOM.createRoot(document.getElementById('root')).render(<MemoryGame />);
 
-Características principales
+### Características principales
 
     Grid de 4x4 cartas generadas aleatoriamente cada vez que se carga la página.
 
@@ -50,6 +50,6 @@ Características principales
 
     Código organizado en un solo archivo .html como lo exige el laboratorio.
 
-Nota
+#### Nota
 
 Se prohíbe el uso de create-react-app o vite. Todo el entorno de React y Babel es cargado manualmente a través de CDN.
