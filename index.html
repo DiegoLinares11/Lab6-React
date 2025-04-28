@@ -49,6 +49,7 @@
       height: 100px;
       perspective: 1000px;
       cursor: pointer;
+      overflow: hidden;
     }
   
     .card-inner {
@@ -81,12 +82,15 @@
       background: white;
       color: #333;
       border: 2px solid #ddd;
-      transform: rotateY(180deg);
+      transform: rotateY(180deg) translateZ(1px);
+      backface-visibility: hidden;
     }
   
     .card-back {
       background: linear-gradient(135deg, #667eea, #764ba2);
       color: white;
+      backface-visibility: hidden;
+      transform: rotateY(0deg) translateZ(1px);
     }
     @keyframes pop {
     0% { transform: scale(1); }
